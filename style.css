@@ -1,3 +1,6 @@
+/* ==========================================
+   RESET & UTAMA
+   ========================================== */
 * {
     margin: 0;
     padding: 0;
@@ -8,16 +11,20 @@
 
 body {
     background-color: #f8f9fa;
-    color: #333;
+    color: #333333;
+    line-height: 1.6;
 }
 
-/* Header & Nav */
+/* ==========================================
+   HEADER & NAVIGATION
+   ========================================== */
 header {
     position: fixed;
     top: 0;
+    left: 0;
     width: 100%;
     background: #ffffff;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     z-index: 1000;
 }
 
@@ -26,112 +33,228 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 15px 8%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .logo {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     font-weight: 700;
-    color: #111;
     text-decoration: none;
+    letter-spacing: 1px;
 }
 
-.logo span {
-    color: #e63946; /* Warna tema GPLEX */
+/* Warna Warni Huruf GPLEX */
+.logo .char-g { color: #FF0000; } /* Merah */
+.logo .char-p { color: #28A745; } /* Hijau */
+.logo .char-l { color: #007BFF; } /* Biru */
+.logo .char-e { color: #FFD700; } /* Kuning */
+.logo .char-x { color: #6F4E37; } /* Coklat Kopi */
+
+/* Perkataan SANDAKAN */
+.logo .sandakan-text {
+    color: #222222;
+    margin-left: 5px;
+    font-weight: 700;
 }
 
 .nav-links {
     display: flex;
     list-style: none;
+    align-items: center;
 }
 
 .nav-links li a {
     text-decoration: none;
-    color: #333;
+    color: #333333;
     margin: 0 15px;
     font-weight: 500;
-    transition: 0.3s;
+    transition: color 0.3s ease;
 }
 
 .nav-links li a:hover {
-    color: #e63946;
+    color: #007BFF;
 }
 
-/* Hero Section */
+.btn-nav {
+    background: #e63946;
+    color: #ffffff !important;
+    padding: 8px 18px;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.btn-nav:hover {
+    background: #c52a36;
+}
+
+/* ==========================================
+   HERO SECTION (#utama)
+   ========================================== */
 .hero {
     height: 100vh;
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/hero-bg.jpg') center/cover no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), 
+                url('images/hero-bg.jpg') center/cover no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    color: white;
+    color: #ffffff;
     padding: 0 20px;
+}
+
+.hero-content h3 {
+    font-size: 1.2rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #ffd700;
+    margin-bottom: 10px;
 }
 
 .hero-content h1 {
     font-size: 2.8rem;
-    margin: 15px 0;
+    margin-bottom: 15px;
+    line-height: 1.2;
 }
 
 .hero-content p {
     font-size: 1.1rem;
-    margin-bottom: 25px;
-    max-width: 600px;
+    margin-bottom: 30px;
+    max-width: 650px;
     margin-left: auto;
     margin-right: auto;
+    color: #e0e0e0;
 }
 
-/* Buttons */
+.hero-btns {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+/* ==========================================
+   BUTTONS (BUTANG)
+   ========================================== */
 .btn {
     display: inline-block;
     padding: 12px 25px;
-    border-radius: 5px;
+    border-radius: 6px;
     text-decoration: none;
     font-weight: 600;
-    transition: 0.3s;
-    margin: 5px;
+    transition: all 0.3s ease;
+    cursor: pointer;
 }
 
 .primary-btn {
     background: #e63946;
-    color: white;
+    color: #ffffff;
 }
 
 .whatsapp-btn {
     background: #25d366;
-    color: white;
+    color: #ffffff;
+}
+
+.card-btn {
+    background: #007BFF;
+    color: #ffffff;
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
 }
 
 .btn:hover {
     transform: translateY(-3px);
-    opacity: 0.9;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    opacity: 0.95;
 }
 
-/* Sections */
+/* ==========================================
+   SECTIONS GENERAL
+   ========================================== */
 .section {
-    padding: 80px 8%;
+    padding: 90px 8%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.bg-light {
+    background-color: #ffffff;
 }
 
 .section-title {
     text-align: center;
     font-size: 2rem;
     margin-bottom: 40px;
+    color: #111111;
     position: relative;
 }
 
-/* Property Grid (Macam Card Portfolio) */
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: #e63946;
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+/* ==========================================
+   SERVICES SECTION (#servis)
+   ========================================== */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.service-card {
+    background: #ffffff;
+    padding: 30px 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+}
+
+.service-card i {
+    font-size: 2.5rem;
+    color: #e63946;
+    margin-bottom: 15px;
+}
+
+.service-card h3 {
+    margin-bottom: 10px;
+    font-size: 1.25rem;
+}
+
+.service-card p {
+    color: #666666;
+    font-size: 0.95rem;
+}
+
+/* ==========================================
+   PROPERTIES SECTION (#hartanah)
+   ========================================== */
 .property-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 30px;
 }
 
 .property-card {
-    background: white;
-    border-radius: 10px;
+    background: #ffffff;
+    border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-    transition: 0.3s;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
 }
 
 .property-card:hover {
@@ -140,7 +263,7 @@ header {
 
 .property-img {
     position: relative;
-    height: 200px;
+    height: 220px;
 }
 
 .property-img img {
@@ -154,10 +277,15 @@ header {
     top: 15px;
     left: 15px;
     background: #e63946;
-    color: white;
-    padding: 5px 10px;
+    color: #ffffff;
+    padding: 5px 12px;
     font-size: 0.8rem;
-    border-radius: 3px;
+    font-weight: 600;
+    border-radius: 4px;
+}
+
+.badge.secondary {
+    background: #28a745;
 }
 
 .property-info {
@@ -165,14 +293,22 @@ header {
 }
 
 .property-info h3 {
-    margin-bottom: 10px;
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+    color: #222222;
+}
+
+.location {
+    font-size: 0.9rem;
+    color: #777777;
+    margin-bottom: 8px;
 }
 
 .price {
     font-weight: 700;
     color: #e63946;
-    font-size: 1.2rem;
-    margin: 10px 0;
+    font-size: 1.25rem;
+    margin-bottom: 12px;
 }
 
 .specs {
@@ -180,14 +316,63 @@ header {
     display: flex;
     gap: 15px;
     font-size: 0.85rem;
-    color: #666;
-    margin-bottom: 15px;
+    color: #555555;
+    margin-bottom: 20px;
+    border-top: 1px solid #eeeeee;
+    padding-top: 12px;
 }
 
-/* Footer */
+/* ==========================================
+   CONTACT SECTION (#hubungi) & FOOTER
+   ========================================== */
+.contact-container {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contact-info p {
+    margin: 15px 0;
+    font-size: 1rem;
+    color: #444444;
+}
+
+.contact-info i {
+    color: #e63946;
+    margin-right: 10px;
+}
+
 footer {
-    background: #111;
-    color: white;
+    background: #111111;
+    color: #ffffff;
     text-align: center;
     padding: 20px;
+    font-size: 0.9rem;
+}
+
+/* ==========================================
+   RESPONSIF KEPADA SKRIN KECIL (MOBILE)
+   ========================================== */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .nav-links li a {
+        margin: 5px 10px;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
 }
